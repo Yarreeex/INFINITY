@@ -2237,13 +2237,13 @@ textarea.form-control-lg {
   filter: brightness(90%);
 }
 .form-check-input:focus {
-  border-color: #86b7fe;
+  border-color: #ffffff;
   outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.25);
 }
 .form-check-input:checked {
-  background-color: #0d6efd;
-  border-color: #0d6efd;
+  background-color: #000000;
+  border-color: #000000;
 }
 .form-check-input:checked[type=checkbox] {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
@@ -2252,8 +2252,8 @@ textarea.form-control-lg {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
 }
 .form-check-input[type=checkbox]:indeterminate {
-  background-color: #0d6efd;
-  border-color: #0d6efd;
+  background-color: #000000;
+  border-color: #000000;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/%3e%3c/svg%3e");
 }
 .form-check-input:disabled {
@@ -2934,6 +2934,148 @@ textarea.form-control-lg {
   --bs-btn-disabled-border-color: #dc3545;
 }
 
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-name {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 1.5rem;
+  margin-left: 10px;
+}
+
+.item-checkbox {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.item-price{
+  font-weight: bold;
+  text-align: right;
+  width: 180px;
+}
+
+.total{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 1.5rem;
+  margin-left: 10px;
+}
+
+.harga{
+  font-weight: bold;
+  text-align: right;
+  width: 180px;
+  margin-right: 28px;
+}
+
+.item-actions {
+  display: flex;
+  align-items: center;
+}
+
+.item-actions input[type="checkbox"] {
+  display: none;
+}
+
+.item-actions input[type="checkbox"] + label {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+  border: 1px solid #000000;
+  border-radius: 2px;
+  position: relative;
+}
+
+.item-actions input[type="checkbox"] + label::after {
+  content: "";
+  display: none;
+  position: absolute;
+  top: 3px;
+  left: 7px;
+  width: 5px;
+  height: 9px;
+  border: solid #000;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.item-actions input[type="checkbox"]:checked + label::after {
+  display: block;
+}
+
+.reset-btn {
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: 23px;
+}
+
+/* Style for button checkout */
+.checkout-btn {
+  display: inline-block;
+  margin-right: 25px;
+  width: 260px;
+}
+
+/* Style for centering the buttons */
+.buttons-wrapper {
+  text-align: center;
+}
+
+.checkbox-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox-wrapper label {
+  display: block;
+  height: 100%;
+  cursor: pointer;
+}
+
+.checkbox-wrapper label:before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #000000;
+  border-radius: 3px;
+  margin-right: 10px;
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked + label:before {
+  content: '\2714';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  color: #ffffff;
+  border-color: #000000;
+}
+
 .btn-light {
   --bs-btn-color: #000;
   --bs-btn-bg: #f8f9fa;
@@ -3186,6 +3328,108 @@ textarea.form-control-lg {
   position: relative;
 }
 
+.btn-cart {
+  color: #fff;
+  background-color: #343a40;
+  border-color: #343a40;
+}
+
+.btn-cart:hover {
+  color: #fff;
+  background-color: #23272b;
+  border-color: #1d2124;
+}
+
+.dropdown-menu li {
+  position: relative;
+}
+
+.dropdown-menu li input[type="checkbox"] {
+  margin-left: auto;
+  margin-right: 0;
+  transform: scale(1.5);
+}
+
+.dropdown-menu li label {
+  margin-left: 5px;
+}
+
+.dropdown-menu li span.item-name {
+  width: 100%;
+}
+
+.dropdown-menu li span.item-price {
+  width: 30%;
+}
+
+
+/* Style untuk Cart Dropdown */
+.dropdown-menu {
+  background-color: #f8f9fa;
+  border: none;
+}
+
+.dropdown-item {
+  color: #212529;
+}
+
+.dropdown-item:hover {
+  color: #fff;
+  background-color: #343a40;
+}
+
+/* Style untuk Product List */
+.list-group-item {
+  border: none;
+  padding: 20px;
+}
+
+.list-group-item:hover {
+  background-color: #f8f9fa;
+  transition: all 0.3s ease-in-out;
+}
+
+.list-group-item:last-child {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* Style untuk Checkout dan Reset Button */
+.btn-checkout {
+  color: #fff;
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.btn-checkout:hover {
+  color: #fff;
+  background-color: #0b5ed7;
+  border-color: #0a58ca;
+}
+
+.btn-reset {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.btn-reset:hover {
+  color: #fff;
+  background-color: #5c636a;
+  border-color: #565d64;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-container button {
+  width: 150px;
+}
+
 .dropdown-toggle {
   white-space: nowrap;
 }
@@ -3203,9 +3447,14 @@ textarea.form-control-lg {
   margin-left: 0;
 }
 
+#cb1 {
+  accent-color: #000000;
+  margin-left: 10px;
+}
+
 .dropdown-menu {
   --bs-dropdown-zindex: 1000;
-  --bs-dropdown-min-width: 10rem;
+  --bs-dropdown-min-width: 25rem;
   --bs-dropdown-padding-x: 0;
   --bs-dropdown-padding-y: 0.5rem;
   --bs-dropdown-spacer: 0.125rem;
@@ -3223,7 +3472,7 @@ textarea.form-control-lg {
   --bs-dropdown-link-hover-color: #1e2125;
   --bs-dropdown-link-hover-bg: #e9ecef;
   --bs-dropdown-link-active-color: #fff;
-  --bs-dropdown-link-active-bg: #0d6efd;
+  --bs-dropdown-link-active-bg: #000000;
   --bs-dropdown-link-disabled-color: #adb5bd;
   --bs-dropdown-item-padding-x: 1rem;
   --bs-dropdown-item-padding-y: 0.25rem;
@@ -4597,6 +4846,7 @@ textarea.form-control-lg {
   white-space: nowrap;
   vertical-align: baseline;
   border-radius: var(--bs-badge-border-radius);
+  
 }
 .badge:empty {
   display: none;
