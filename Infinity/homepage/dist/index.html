@@ -35,47 +35,28 @@
                     </ul>
                     <div class="dropdown">
                         <button class="btn btn-outline-dark dropdown-toggle" type="button" id="cartDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                          <i class="bi-cart-fill me-1"></i>
-                          Cart
-                          <span class="badge bg-dark text-white ms-1 rounded-pill">3</span>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="cartDropdown">
+                            <i class="bi-cart-fill me-1"></i>
+                            Cart
+                            <span class="badge bg-dark text-white ms-1 rounded-pill"></span>
+                          </button>                          
+                        <ul class="dropdown-menu dropdown-menu-end dropdown-scrollbar" aria-labelledby="cartDropdown">
                           <li>
-                            <div class="d-flex justify-content-between">
-                              <span class="item-name">Valorant 1000 VP</span>
-                              <span class="item-price">IDR 100K</span>
-                              <input type="checkbox" id="cb1" name="item-1" value="item-1">
-                              <label for="item-1"></label>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="d-flex justify-content-between">
-                              <span class="item-name">Valorant 1000 VP</span>
-                              <span class="item-price">IDR 180K</span>
-                              <input type="checkbox" id="cb1" name="item-2" value="item-2">
-                              <label for="item-2"></label>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="d-flex justify-content-between">
-                              <span class="item-name">Steam Wallet IDR 120,000</span>
-                              <span class="item-price">IDR 100K</span>
-                              <input type="checkbox" id="cb1" name="item-3" value="item-3">
-                              <label for="item-3"></label>
-                            </div>
-                          </li>
-                          <div class="dropdown-divider"></div>
-                          <li>
-                            <div class="d-flex justify-content-between">
-                              <span class="total">Total</span>
-                              <span class="harga">IDR 380K</span>
+                            <div class="cart">
+                              <ul id="cart-list" style="list-style: none;"></ul>
+                              <div class="cart-footer">
+                                <hr>
+                                <div class="d-flex justify-content-between">
+                                  <span class="total-items"></span>
+                                  <span class="total-price"></span>
+                                </div>
+                              </div>
                             </div>
                           </li>
                           <hr>
                           <li>
                             <div class="d-flex justify-content-between">
                               <button type="button" class="btn btn-outline-dark reset-btn">Delete</button>
-                              <button type="button" class="btn btn-dark checkout-btn">Checkout</button>
+                              <a href="https://r.mtdv.me/infinity"><button type="button" class="btn btn-dark checkout-btn">Checkout</button></a>
                             </div>
                           </li>
                         </ul>
@@ -100,24 +81,29 @@
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                     <div class="col mb-5">
                         <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="assets/valobanner_450x300.png" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Valorant</h5>
-                                    <h6 class="fw-bolder">1000 VP</h6>
-                                    <!-- Product price-->
-                                    IDR 100K
-                                </div>
+                          <!-- Product image-->
+                          <img class="card-img-top" src="assets/valobanner_450x300.png" alt="..." />
+                          <!-- Product details-->
+                          <div class="card-body p-4">
+                            <div class="text-center">
+                              <!-- Product name-->
+                              <div class="item">
+                                <h5 class="fw-bolder">Valorant</h5>
+                                <h6 class="fw-bolder">1000 VP</h6>
+                              </div>
+                              <!-- Product price-->
+                              <span class="price">IDR 100K</span>
                             </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                          </div>
+                          <!-- Product actions-->
+                          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center">
+                              <a class="btn btn-outline-dark mt-auto" onclick="addToCart('Valorant 1000 VP', 100)">Add to cart</a>
                             </div>
+                          </div>
                         </div>
-                    </div>
+                      </div>
+                    
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Sale badge-->
@@ -128,27 +114,30 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Valorant</h5>
-                                    <h6 class="fw-bolder">2000 VP</h6>
-                                    <!-- Product reviews-->
-                                    <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="item">
+                                        <h5 class="fw-bolder">Valorant</h5>
+                                        <h6 class="fw-bolder">2000 VP</h6>
+                                      </div>
+                                      <div class="d-flex justify-content-center small text-warning mb-2">
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
                                     </div>
-                                    <!-- Product price-->
-                                    <span class="text-muted text-decoration-line-through">IDR 200K</span>
-                                    IDR 180K
+                                      <!-- Product price-->
+                                      <span class="text-muted text-decoration-line-through">IDR 200K</span>
+                                      <span class="price">IDR 180K</span>
+                                    </div>
+                                  </div>
+                                  <!-- Product actions-->
+                                  <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                    <div class="text-center">
+                                      <a class="btn btn-outline-dark mt-auto" onclick="addToCart('Valorant 2000 VP', 180)">Add to cart</a>
+                                    </div>
+                                  </div>
                                 </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-                            </div>
-                        </div>
-                    </div>
+                              </div>
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Sale badge-->
@@ -159,19 +148,23 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Mobile Legends</h5>
-                                    <h6 class="fw-bolder">600 Diamonds</h6>
-                                    <!-- Product price-->
-                                    <span class="text-muted text-decoration-line-through">IDR 130K</span>
-                                    IDR 100K
+                                    <div class="item">
+                                        <h5 class="fw-bolder">Mobile Legends</h5>
+                                        <h6 class="fw-bolder">600 Diamonds</h6>
+                                      </div>
+                                      <!-- Product price-->
+                                      <span class="text-muted text-decoration-line-through">IDR 130K</span>
+                                      <span class="price">IDR 100K</span>
+                                    </div>
+                                  </div>
+                                  <!-- Product actions-->
+                                  <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                    <div class="text-center">
+                                      <a class="btn btn-outline-dark mt-auto" onclick="addToCart('Mobile Legends 600 Diamonds', 100)">Add to cart</a>
+                                    </div>
+                                  </div>
                                 </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-                            </div>
-                        </div>
-                    </div>
+                              </div>
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Product image-->
@@ -180,26 +173,29 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Steam Wallet</h5>
-                                    <h6 class="fw-bolder">IDR 120,000</h6>
-                                    <!-- Product reviews-->
-                                    <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="item">
+                                        <h5 class="fw-bolder">Steam Wallet</h5>
+                                        <h6 class="fw-bolder">IDR 120,000</h6>
+                                      </div>
+                                      <div class="d-flex justify-content-center small text-warning mb-2">
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
                                     </div>
-                                    <!-- Product price-->
-                                    IDR 100K
+                                      <!-- Product price-->
+                                      <span class="price">IDR 100K</span>
+                                    </div>
+                                  </div>
+                                  <!-- Product actions-->
+                                  <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                    <div class="text-center">
+                                      <a class="btn btn-outline-dark mt-auto" onclick="addToCart('Steam Wallet IDR 120,000', 100)">Add to cart</a>
+                                    </div>
+                                  </div>
                                 </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-                            </div>
-                        </div>
-                    </div>
+                              </div>
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Sale badge-->
@@ -210,27 +206,30 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">PUBG Mobile</h5>
-                                    <h6 class="fw-bolder">1000 UC</h6>
-                                    <!-- Product reviews-->
-                                    <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="item">
+                                        <h5 class="fw-bolder">PUBG Mobile</h5>
+                                        <h6 class="fw-bolder">1000 UC</h6>
+                                      </div>
+                                      <div class="d-flex justify-content-center small text-warning mb-2">
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
                                         <div class="bi-star-fill"></div>
                                     </div>
-                                    <!-- Product price-->
-                                    <span class="text-muted text-decoration-line-through">IDR 170K</span>
-                                    IDR 150K
+                                      <!-- Product price-->
+                                      <span class="text-muted text-decoration-line-through">IDR 170K</span>
+                                      <span class="price">IDR 150K</span>
+                                    </div>
+                                  </div>
+                                  <!-- Product actions-->
+                                  <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                    <div class="text-center">
+                                      <a class="btn btn-outline-dark mt-auto" onclick="addToCart('PUBG Mobile 1000 UC', 150)">Add to cart</a>
+                                    </div>
+                                  </div>
                                 </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-                            </div>
-                        </div>
-                    </div>
+                              </div>
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Product image-->

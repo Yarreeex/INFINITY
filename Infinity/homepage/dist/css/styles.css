@@ -2216,6 +2216,8 @@ textarea.form-control-lg {
   height: 1em;
   margin-top: 0.25em;
   vertical-align: top;
+  display: flex;
+  justify-content: right;
   background-color: #fff;
   background-repeat: no-repeat;
   background-position: center;
@@ -2229,6 +2231,7 @@ textarea.form-control-lg {
 }
 .form-check-input[type=checkbox] {
   border-radius: 0.25em;
+  margin-right: 20px;
 }
 .form-check-input[type=radio] {
   border-radius: 50%;
@@ -2946,7 +2949,17 @@ textarea.form-control-lg {
   flex-direction: column;
 }
 
-.item-name {
+.form-check-start {
+  display: flex;
+  justify-content: end;
+}
+
+.form-check-start .form-check-input {
+  margin-right: 5px;
+}
+
+
+.cart-list {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -2965,6 +2978,7 @@ textarea.form-control-lg {
   font-weight: bold;
   text-align: right;
   width: 180px;
+  margin-right: 10px;
 }
 
 .total{
@@ -2973,6 +2987,22 @@ textarea.form-control-lg {
   justify-content: space-between;
   padding-right: 1.5rem;
   margin-left: 10px;
+}
+
+.total-items{
+  font-weight: bolder;
+  display: flex;
+  text-align: left;
+  margin-left: 30px;
+  margin-bottom: 10px;
+}
+
+.total-price{
+  font-weight: bolder;
+  display: flex;
+  text-align: right;
+  margin-right: 30px;
+  margin-bottom: 10px;
 }
 
 .harga{
@@ -3034,6 +3064,10 @@ textarea.form-control-lg {
 /* Style for centering the buttons */
 .buttons-wrapper {
   text-align: center;
+}
+
+.checkbox-kotak{
+  margin-bottom: 10px;
 }
 
 .checkbox-wrapper {
@@ -3346,7 +3380,7 @@ textarea.form-control-lg {
 
 .dropdown-menu li input[type="checkbox"] {
   margin-left: auto;
-  margin-right: 0;
+  margin-right: 30px;
   transform: scale(1.5);
 }
 
@@ -3449,7 +3483,8 @@ textarea.form-control-lg {
 
 #cb1 {
   accent-color: #000000;
-  margin-left: 10px;
+  display: flex;
+  justify-content: end;
 }
 
 .dropdown-menu {
@@ -3984,7 +4019,9 @@ textarea.form-control-lg {
   --bs-navbar-toggler-border-radius: 0.375rem;
   --bs-navbar-toggler-focus-width: 0.25rem;
   --bs-navbar-toggler-transition: box-shadow 0.15s ease-in-out;
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 1100;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -4036,6 +4073,12 @@ textarea.form-control-lg {
 .navbar-nav .dropdown-menu {
   position: static;
 }
+
+.dropdown-scrollbar{
+  max-height: 500px;
+  overflow-x: hidden;
+  overflow-y: auto;
+ }
 
 .navbar-text {
   padding-top: 0.5rem;
